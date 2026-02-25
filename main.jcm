@@ -1,0 +1,37 @@
+/*
+    JaCaMo Application File Template
+    --------------------------------
+
+    This file defines the initial state of the MAS (initial agents, environment, organisation, ....)
+
+    (see jacamo/doc/jcm.html for more information about what can be defined in this file)
+
+    JaCaMo 1.2
+*/
+
+mas main {
+
+    agent analyzer: analyzer.asl {
+      focus: w.c1 
+    }
+
+    // --- YENİ AJAN ---
+    agent generator : generator.asl {
+      focus: w.c1
+    }
+    // -----------------
+
+    agent orchestrator : orchestrator.asl {
+      focus: w.c1 
+    }
+
+    agent executor : executor.asl {
+      focus: w.c1
+    }
+
+    workspace w {
+      artifact c1: example.Counter(3) 
+      artifact logic_tool: tools.LogicMapArtifact()
+      artifact output_parser: tools.TestOutputParserArtifact()
+    }
+}
